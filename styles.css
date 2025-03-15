@@ -460,7 +460,7 @@ nav {
     max-width: 600px;
     margin: 0 auto;
 }
-
+url('../images/a_photo_of_clouds_and_a_woman.jpeg')
 .contact-form form {
     display: flex;
     flex-direction: column;
