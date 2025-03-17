@@ -1,40 +1,76 @@
-// ... existing code ...
-
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 60px; /* מניח את התפריט תחת הכותרת */
         right: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.95);
         padding: 20px;
         display: flex;
-        flex-direction: row; /* שינוי לשורה אופקית */
-        justify-content: space-around; /* מרווח שווה בין הפריטים */
+        flex-direction: column; /* שינוי לתצוגה אנכית */
         align-items: center;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateY(0); /* מציג את התפריט כשהוא פעיל */
     }
 
     .nav-links a {
-        margin: 0 10px;
-        font-size: 0.9rem;
+        margin: 10px 0;
+        font-size: 1.2rem;
         color: #333;
         white-space: nowrap; /* מונע שבירת שורה */
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-        margin-top: 60px; /* מרווח מהתפריט */
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
     }
 
-    .hero p {
-        font-size: 1.2rem;
+    .hamburger div {
+        width: 35px;
+        height: 4px;
+        background: #333;
+        margin: 6px 0;
+        transition: all 0.3s ease;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    /* שינוי צורת הכפתור בעת פתיחת התפריט */
+    .hamburger.active div:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
     }
 }
 
-// ... existing code ...
+/* התאמות נוספות */
+.hero h1 {
+    font-size: 2.2rem;
+    margin-top: 80px; /* מרווח גדול יותר מתפריט ההמבורגר */
+}
+
+.hero p {
+    font-size: 1.1rem;
+}
+
+.cards {
+    grid-template-columns: 1fr;
+}
