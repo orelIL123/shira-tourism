@@ -1,8 +1,9 @@
 /* Mobile Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-links {
         position: fixed;
-        top: 60px; /* מניח את התפריט תחת הכותרת */
+        top: 60px;
         right: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.95);
@@ -60,6 +61,7 @@
         transform: translateY(-10px) rotate(-45deg);
     }
 }
+
 
 /* התאמות נוספות */
 .hero h1 {
